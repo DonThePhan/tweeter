@@ -1,0 +1,32 @@
+.new-tweet {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form textarea {
+  background-color: inherit;
+  border: none;
+  border-bottom: solid #545149 3px;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  outline-width: 0;
+}
+
+form .under-border {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
+form .under-border button {
+  background-color: #4056a1;
+  color: white;
+}
