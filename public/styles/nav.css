@@ -1,39 +1,28 @@
-nav {
+.navigation {
   position: fixed;
   z-index: 100;
-  top: 0;
-  padding: 0 1.5em;
   display: flex;
   justify-content: space-between;
-  height: 120px;
+  top: 0;
+  padding: 1.4em 1.5em 0;
   width: 100vw;
+  height: 120px;
   background-color: #4056a1;
   color: #fff;
 }
 
-nav span {
+.navigation .title {
   font-family: 'Bungee', sans-serif;
-  margin-top: 1em;
   font-size: 2em;
 }
 
-.write-a-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
 .write-a-tweet ul {
-  margin-top: 2em;
+  margin: 0;
   list-style-type: none;
 }
-
 .write-a-tweet ul li {
   text-align: center;
 }
-
 .write-a-tweet i {
   color: red;
 }
