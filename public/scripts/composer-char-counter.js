@@ -6,7 +6,8 @@ $(document).ready(function() {
   // form char counter logic
   textArea.on('input', function() {
     // access counter by traversing through DOM tree using textArea's 'this'
-    let counter = $(this).parent().find('.counter');
+    /** We traverse vs selecting via class because classes will often change but DOM elements usually remain*/
+    let counter = $(this).siblings('div').first().children('output').first();
 
     // set counter text & color
     counter.text(() => {

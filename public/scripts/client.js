@@ -1,41 +1,5 @@
 $(document).ready(function() {});
 
-const data = [
-  {
-    user: {
-      name: 'Donny',
-      avatars: 'https://i.imgur.com/JNg2F7i.jpeg',
-      handle: '@CuriousD'
-    },
-    content: {
-      text: 'Stretches help me release'
-    },
-    created_at: new Date()
-  },
-  {
-    user: {
-      name: 'Newton',
-      avatars: 'https://i.imgur.com/73hZDYK.png',
-      handle: '@SirIsaac'
-    },
-    content: {
-      text: 'If I have seen further it is by standing on the shoulders of giants'
-    },
-    created_at: 1461116232227
-  },
-  {
-    user: {
-      name: 'Descartes',
-      avatars: 'https://i.imgur.com/nlhLi3I.png',
-      handle: '@rd'
-    },
-    content: {
-      text: 'Je pense , donc je suis'
-    },
-    created_at: 1461113959088
-  }
-];
-
 const createTweetElement = (tweetData) => {
   let timePassed = timeago.format(tweetData.created_at);
 
@@ -63,11 +27,62 @@ const createTweetElement = (tweetData) => {
 
 const renderTweets = function(tweets) {
   let $tweetContainer = $('#tweets-container');
+  $tweetContainer.text(''); // reset/empty before populating
 
   tweets.forEach((tweetData) => {
     const $tweet = createTweetElement(tweetData);
-    $tweetContainer.append($tweet);
+    $tweetContainer.prepend($tweet);
   });
 };
 
-renderTweets(data);
+const loadTweets = () => {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET'
+  })
+    .then((data) => {
+      renderTweets(data);
+    })
+    .catch((err) => console.log(err));
+};
+
+loadTweets();
+
+const $formSubmission = $('.tweet-form');
+$formSubmission.on('submit', function(e) {
+  e.preventDefault();
+
+  // let user = {
+  //   name: 'Donny',
+  //   avatars: 'https://i.imgur.com/73hZDYK.png',
+  //   handle: '@DonThePhan'
+  // };
+
+  let data = $(this).serialize(); // turns form data into query string -> i.e. search=cats
+  let entry = $(this).serializeArray()[0].value; /** There will always only be just 1 element */
+
+  if (entry.length > 140) {
+    alert('Tweet exceeds maximum allowable number of characters');
+  } else if (!entry || !entry.replace(/\s/g, '').length) {
+    alert('Entry is empty...');
+  } else {
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: data,
+      success: function(response, textStatus, jqXHR) {
+        $('#tweet-text').val('');
+        loadTweets();
+      },
+      error: function(jqXHR, textStatus, errorThrown) {},
+      complete: function() {}
+    });
+
+    // $.post(`/tweets?${$(this).serialize() & $(user.serialize())}`, {},(data) => {
+    //   window.location.replace('/');
+    //   return data;
+    // })
+    //   .done(function(data) {})
+    //   .fail(function() {});
+  }
+});
