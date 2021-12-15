@@ -1,4 +1,4 @@
-header {
+.hero {
   margin-top: 120px;
   height: 400px;
   width: 100%;
@@ -10,7 +10,7 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
 }
 
-header h2 {
+.hero h2 {
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;

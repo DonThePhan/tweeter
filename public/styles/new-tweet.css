@@ -12,6 +12,7 @@
 }
 
 .tweet-form textarea {
+  margin: .5em 0;
   background-color: inherit;
   border: none;
   border-bottom: solid #545149 3px;
@@ -20,7 +21,6 @@
 }
 
 .tweet-form .under-border {
-  margin-top: .5em;
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
