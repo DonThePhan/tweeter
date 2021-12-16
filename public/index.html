@@ -59,25 +59,26 @@
 
   <!-- Page-specific (main) content here -->
   <main>
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form class="tweet-form">
-        <label for="tweet-text">What are you humming about?</label>
-        <div class='entry-error-slide'>
-          <div class='entry-error'>
-            <i class="fas fa-exclamation-triangle"></i>
-            <p class='error-message'></p>
-            <i class="fas fa-exclamation-triangle"></i>
+    <div class='new-tweet-slider'>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form class="tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <div class='entry-error-slide'>
+            <div class='entry-error'>
+              <i class="fas fa-exclamation-triangle"></i>
+              <p class='error-message'></p>
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
           </div>
-        </div>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class='under-border'>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class='under-border'>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </div>
     <section class='tweets' id='tweets-container' />
   </main>
 

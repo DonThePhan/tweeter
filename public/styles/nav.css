@@ -3,8 +3,9 @@
   z-index: 100;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   top: 0;
-  padding: 1.4em 1.5em 0;
+  padding: 1.4em 1.5em;
   width: 100vw;
   height: 120px;
   background-color: #4056a1;
@@ -16,13 +17,50 @@
   font-size: 2em;
 }
 
+.write-a-tweet {
+  transition: .25s linear;
+  border-radius: 10px;
+}
+
+.write-a-tweet:hover {
+  cursor: pointer;
+}
+
 .write-a-tweet ul {
   margin: 0;
+  padding: .5em;
   list-style-type: none;
 }
 .write-a-tweet ul li {
   text-align: center;
 }
+
 .write-a-tweet i {
+  position: absolute;
   color: red;
+  animation: bounce 1s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: .5em;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

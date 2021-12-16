@@ -54,6 +54,11 @@ $(document).ready(function() {
 
   loadTweets();
 
+  const $writeATweet = $('.write-a-tweet');
+  $writeATweet.on('click', function() {
+    $('.new-tweet-slider').slideDown();
+  });
+
   const $formSubmission = $('.tweet-form');
   $formSubmission.on('submit', function(e) {
     e.preventDefault();
