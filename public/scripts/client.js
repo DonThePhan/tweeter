@@ -54,10 +54,29 @@ $(document).ready(function() {
 
   loadTweets();
 
+  /** STRETCH - START */
   const $writeATweet = $('.write-a-tweet');
   $writeATweet.on('click', function() {
     $('.new-tweet-slider').slideDown();
   });
+
+  const $navBar = $('.navigation');
+  const $backToTop = $('.back-to-top');
+  $backToTop.on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 'fast');
+  });
+
+  $(window).scroll(function(event) {
+    let scroll = $(this).scrollTop();
+    if (scroll > 200) {
+      $navBar.css('opacity', 0);
+      $backToTop.css('opacity', 1);
+    } else {
+      $navBar.css('opacity', 1);
+      $backToTop.css('opacity', 0);
+    }
+  });
+  /** STRETCH - END */
 
   const $formSubmission = $('.tweet-form');
   $formSubmission.on('submit', function(e) {
