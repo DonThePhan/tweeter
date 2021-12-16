@@ -31,21 +31,7 @@
 </head>
 
 <body>
-  <!-- <nav class='navbar-top'>
-    <span class='navbar-brand'>tweeter</span>
-    <ul class='navbar-menu'>
-      <li class="navbar-item">hello</li>
-      <li class="navbar-item">home</li>
-    </ul>
-  </nav>
-  
-  <nav class='navbar-bottom'>
-    <span class='navbar-brand'>tweeter</span>
-    <ul class='navbar-menu'>
-      <li class="navbar-item">hello</li>
-      <li class="navbar-item">home</li>
-    </ul>
-  </nav> -->
+
   <!-- Top nav bar (fixed) -->
   <nav class="navigation">
     <span class="title">tweeter</span>
@@ -70,12 +56,20 @@
       <h2><b>Donny</b> Phan</h2>
     </div>
   </header>
+
   <!-- Page-specific (main) content here -->
   <main>
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form class="tweet-form">
         <label for="tweet-text">What are you humming about?</label>
+        <div class='entry-error-slide'>
+          <div class='entry-error'>
+            <i class="fas fa-exclamation-triangle"></i>
+            <p class='error-message'></p>
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+        </div>
         <textarea name="text" id="tweet-text"></textarea>
         <div class='under-border'>
           <button type="submit">Tweet</button>

@@ -31,6 +31,25 @@
   color: white;
 }
 
+.tweet-form .entry-error-slide {
+  display: none;
+}
+
+.tweet-form .entry-error {
+  margin-top: .5em;
+  padding: .75em;
+  border: 3px solid red;
+  width: 100%;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet-form .entry-error p,
+.tweet-form .entry-error i {
+  margin: 0;
+}
 .over {
   color: red;
 }
