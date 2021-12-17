@@ -10,22 +10,22 @@ $(document).ready(function() {
     let timePassed = timeago.format(tweetData.created_at);
 
     let $tweetElement = $(`<article class="tweet">
-    <header>
-    <div>
-    <img class='tweet-user-avatar' src="${tweetData.user.avatars}" alt="">
-    <p class="tweet-user-name">${tweetData.user.name}</p>
-    </div>
-    <p class="tweet-tag">${tweetData.user.handle}</p>
-    </header>
-    <p>${escape(tweetData.content.text)}</p>
-    <footer>
-    <p class='tweet-message'>${timePassed}</p>
-    <div>
-    <i class="fas fa-flag" />
-    <i class="fas fa-retweet" />
-    <i class="fas fa-heart" />
-    </div>
-    </footer>
+      <header>
+        <div>
+          <img class='tweet-user-avatar' src="${tweetData.user.avatars}" alt="">
+          <p class="tweet-user-name">${tweetData.user.name}</p>
+        </div>
+        <p class="tweet-tag">${tweetData.user.handle}</p>
+      </header>
+      <p>${escape(tweetData.content.text)}</p>
+      <footer>
+        <p class='tweet-message'>${timePassed}</p>
+        <div>
+          <i class="fas fa-flag" />
+          <i class="fas fa-retweet" />
+          <i class="fas fa-heart" />
+        </div>
+      </footer>
     </article>`);
 
     return $tweetElement;

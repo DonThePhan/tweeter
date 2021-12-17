@@ -1,3 +1,5 @@
+@import 'themes';
+
 .navigation {
   position: fixed;
   z-index: 100;
@@ -11,36 +13,37 @@
   background-color: transparent;
   color: #fff;
   transition: opacity .5s;
-}
 
-.navigation .title {
-  font-family: 'Bungee', sans-serif;
-  font-size: 2em;
+  .title {
+    font-family: 'Bungee', sans-serif;
+    font-size: 2em;
+  }
 }
 
 .write-a-tweet {
   transition: .25s linear;
   border-radius: 10px;
-}
 
-.write-a-tweet:hover {
-  cursor: pointer;
-}
+  &:hover {
+    cursor: pointer;
+  }
 
-.write-a-tweet ul {
-  margin: 0;
-  padding: .5em;
-  list-style-type: none;
-}
-.write-a-tweet ul li {
-  text-align: center;
-}
+  ul {
+    margin: 0;
+    padding: .5em;
+    list-style-type: none;
 
-.write-a-tweet i {
-  position: absolute;
-  color: red;
-  text-shadow: 3px 3px 3px black;
-  animation: bounce 1s linear infinite;
+    li {
+      text-align: center;
+    }
+  }
+
+  i {
+    position: absolute;
+    color: $bg-color-3;
+    text-shadow: 3px 3px 3px black;
+    animation: bounce 1s linear infinite;
+  }
 }
 
 @keyframes bounce {
@@ -72,16 +75,16 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: red;
+  background-color: $bg-color-3;
   position: fixed;
   bottom: 30px;
   right: 30px;
   transition: opacity .5s;
-}
 
-.back-to-top:hover {
-  cursor: pointer;
-  animation: pulse .5s alternate infinite;
+  &:hover {
+    cursor: pointer;
+    animation: pulse .5s alternate infinite;
+  }
 }
 
 @keyframes pulse {
@@ -92,6 +95,6 @@
 
 @media screen and (min-width: 1024px) {
   .navigation {
-    background-color: #4056a1;
+    background-color: $bg-color-2;
   }
 }

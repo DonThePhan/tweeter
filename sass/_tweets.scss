@@ -1,0 +1,69 @@
+@import 'themes';
+
+.tweets {
+  @include flex-vertical;
+  width: 100%;
+  margin: 2em;
+
+  .tweet {
+    @include flex-vertical;
+    margin: 2em 0;
+    padding: 1em;
+    border: 3px $color-dark solid;
+
+    &:hover {
+      box-shadow: 10px 10px lightgrey;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        margin: 0 .5em;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+
+        .tweet-user-name {
+          margin-left: .5em;
+        }
+
+        .tweet-user-avatar {
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      .tweet-tag {
+        color: $color-faded;
+      }
+    }
+
+    footer {
+      border-top: 3px solid $color-dark;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .75em;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $bg-color-2;
+
+        i {
+          padding: .3em;
+
+          &:hover {
+            color: $bg-color-3;
+          }
+        }
+      }
+    }
+  }
+}

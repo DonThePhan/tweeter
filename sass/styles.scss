@@ -3,6 +3,13 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+@use 'nav';
+@use 'header';
+@use 'new-tweet';
+@use 'tweets';
+@import 'themes';
+
 html {
   box-sizing: border-box;
 }
@@ -17,8 +24,8 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $color-dark;
+  background-color: $bg-color-1;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;

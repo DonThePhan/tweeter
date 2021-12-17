@@ -1,0 +1,62 @@
+@import 'themes';
+
+.new-tweet-slider {
+  display: none;
+  width: 100%;
+}
+
+.new-tweet {
+  width: 100%;
+
+  .tweet-form {
+    @include flex-vertical;
+
+    label {
+      font-weight: bold;
+    }
+
+    .entry-error-slide {
+      display: none;
+
+      .entry-error {
+        margin-top: .5em;
+        padding: .75em;
+        border: 3px solid $bg-color-3;
+        width: 100%;
+        color: red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p,
+        i {
+          margin: 0;
+        }
+      }
+    }
+
+    textarea {
+      margin: .5em 0;
+      background-color: inherit;
+      border: none;
+      border-bottom: solid $color-dark 3px;
+      padding-bottom: .5em;
+      outline-width: 0;
+    }
+
+    .under-border {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Bungee', sans-serif;
+
+      button {
+        background-color: $bg-color-2;
+        color: white;
+      }
+
+      .over {
+        color: $bg-color-3;
+      }
+    }
+  }
+}
