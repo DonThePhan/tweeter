@@ -54,31 +54,37 @@ $(document).ready(function() {
 
   loadTweets();
 
-  /** STRETCH - START */
+  /** STRETCH - START ---------------------------------------------------- */
+  // Toggle slide down/up for 'new tweet form' when nav button clicked
   const $writeATweet = $('.write-a-tweet');
   $writeATweet.on('click', function() {
     $('.new-tweet-slider').slideToggle();
     $('#tweet-text').focus();
   });
 
+  // Button to trigger scroll to top
   const $navBar = $('.navigation');
   const $backToTop = $('.back-to-top');
   $backToTop.on('click', function() {
     $('html, body').animate({ scrollTop: 0 }, 'fast');
   });
 
+  // Toggles visibility of 'Scroll up button' & nav bar
   $(window).scroll(function(event) {
     let scroll = $(this).scrollTop();
     if (scroll > 200) {
+      // HIDE navbar, SHOW scroll up button
       $navBar.css('opacity', 0);
       $backToTop.css('opacity', 1);
     } else {
+      // SHOW navbar, HIDE scroll up button
       $navBar.css('opacity', 1);
       $backToTop.css('opacity', 0);
     }
   });
-  /** STRETCH - END */
+  /** STRETCH - END ------------------------------------------------------- */
 
+  // TWEET SUBMISSION
   const $formSubmission = $('.tweet-form');
   $formSubmission.on('submit', function(e) {
     e.preventDefault();

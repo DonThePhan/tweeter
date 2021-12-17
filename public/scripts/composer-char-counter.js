@@ -3,13 +3,13 @@ $(document).ready(function() {
   const textAreaMaxChars = 140;
   let textArea = $('#tweet-text');
 
-  // form char counter logic
+  // form CHAR COUNTER logic
   textArea.on('input', function() {
     // access counter by traversing through DOM tree using textArea's 'this'
     /** We traverse vs selecting via class because classes will often change but DOM elements usually remain*/
     let counter = $(this).siblings('div.under-border').first().children('output').first();
 
-    // set counter text & color
+    // SET COUNTER text & color
     counter.text(() => {
       // handle color by applying/removing 'color' class
       if (textAreaMaxChars - $(this).val().length < 0) {
