@@ -21,7 +21,7 @@
       .entry-error {
         margin-top: .5em;
         padding: .75em;
-        border: 3px solid $bg-color-3;
+        border: 3px red solid;
         width: 100%;
         color: red;
         display: flex;
@@ -55,7 +55,7 @@
       }
 
       .over {
-        color: $bg-color-3;
+        color: red;
       }
     }
   }

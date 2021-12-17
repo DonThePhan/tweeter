@@ -1,6 +1,6 @@
 @import 'themes';
 
-.tweets {
+#tweets-container {
   @include flex-vertical;
   width: 100%;
   margin: 2em;

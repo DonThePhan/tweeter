@@ -57,7 +57,8 @@ $(document).ready(function() {
   /** STRETCH - START */
   const $writeATweet = $('.write-a-tweet');
   $writeATweet.on('click', function() {
-    $('.new-tweet-slider').slideDown();
+    $('.new-tweet-slider').slideToggle();
+    $('#tweet-text').focus();
   });
 
   const $navBar = $('.navigation');

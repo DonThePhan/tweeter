@@ -23,6 +23,7 @@
 .write-a-tweet {
   transition: .25s linear;
   border-radius: 10px;
+  transition: opacity .5s;
 
   &:hover {
     cursor: pointer;
@@ -40,7 +41,7 @@
 
   i {
     position: absolute;
-    color: $bg-color-3;
+    color: $bg-color-2;
     text-shadow: 3px 3px 3px black;
     animation: bounce 1s linear infinite;
   }
@@ -83,7 +84,7 @@
 
   &:hover {
     cursor: pointer;
-    animation: pulse .5s alternate infinite;
+    animation: pulse .35s alternate infinite;
   }
 }
 
