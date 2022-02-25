@@ -1,0 +1,280 @@
+.navigation {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  padding: 1.4em 1.5em;
+  width: 100vw;
+  height: 120px;
+  background-color: transparent;
+  color: #fff;
+  transition: opacity 0.5s;
+}
+.navigation .title {
+  font-family: "Bungee", sans-serif;
+  font-size: 2em;
+}
+
+.write-a-tweet {
+  transition: 0.25s linear;
+  border-radius: 10px;
+  transition: opacity 0.5s;
+}
+.write-a-tweet:hover {
+  cursor: pointer;
+}
+.write-a-tweet ul {
+  margin: 0;
+  padding: 0.5em;
+  list-style-type: none;
+}
+.write-a-tweet ul li {
+  text-align: center;
+}
+.write-a-tweet i {
+  position: absolute;
+  color: #cc7a00;
+  text-shadow: 3px 3px 3px black;
+  animation: bounce 1s linear infinite;
+}
+
+@keyframes bounce {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 0.5em;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+.back-to-top {
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00bbff;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: opacity 0.5s;
+}
+.back-to-top:hover {
+  cursor: pointer;
+  animation: pulse 0.35s alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(1.25, 1.25);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .navigation {
+    background-color: #cc7a00;
+  }
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+  padding-top: 120px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #00bbff;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+}
+.hero h2 {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+.hero img {
+  width: 250px;
+  height: 250px;
+}
+
+.new-tweet-slider {
+  display: none;
+  width: 100%;
+}
+
+.new-tweet {
+  width: 100%;
+}
+.new-tweet .tweet-form {
+  display: flex;
+  flex-direction: column;
+}
+.new-tweet .tweet-form label {
+  font-weight: bold;
+}
+.new-tweet .tweet-form .entry-error-slide {
+  display: none;
+}
+.new-tweet .tweet-form .entry-error-slide .entry-error {
+  margin-top: 0.5em;
+  padding: 0.75em;
+  border: 3px red solid;
+  width: 100%;
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new-tweet .tweet-form .entry-error-slide .entry-error p,
+.new-tweet .tweet-form .entry-error-slide .entry-error i {
+  margin: 0;
+}
+.new-tweet .tweet-form textarea {
+  margin: 0.5em 0;
+  background-color: inherit;
+  border: none;
+  border-bottom: solid #545149 3px;
+  padding-bottom: 0.5em;
+  outline-width: 0;
+}
+.new-tweet .tweet-form .under-border {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", sans-serif;
+}
+.new-tweet .tweet-form .under-border button {
+  background-color: #cc7a00;
+  color: white;
+}
+.new-tweet .tweet-form .under-border .over {
+  color: red;
+}
+
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2em;
+}
+#tweets-container .tweet {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+  padding: 1em;
+  border: 3px #545149 solid;
+}
+#tweets-container .tweet:hover {
+  box-shadow: 10px 10px lightgrey;
+}
+#tweets-container .tweet header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#tweets-container .tweet header p {
+  margin: 0 0.5em;
+}
+#tweets-container .tweet header div {
+  display: flex;
+  align-items: center;
+}
+#tweets-container .tweet header div .tweet-user-name {
+  margin-left: 0.5em;
+}
+#tweets-container .tweet header div .tweet-user-avatar {
+  height: 40px;
+  width: 40px;
+}
+#tweets-container .tweet header .tweet-tag {
+  color: lightgrey;
+}
+#tweets-container .tweet footer {
+  border-top: 3px solid #545149;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75em;
+}
+#tweets-container .tweet footer div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cc7a00;
+}
+#tweets-container .tweet footer div i {
+  padding: 0.3em;
+}
+#tweets-container .tweet footer div i:hover {
+  color: #00bbff;
+}
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  background-color: inherit;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    margin-top: 120px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .hero {
+    width: 45%;
+    height: 400px;
+    padding-top: 0;
+    margin-top: 96px;
+  }
+
+  main {
+    width: 45%;
+  }
+}
